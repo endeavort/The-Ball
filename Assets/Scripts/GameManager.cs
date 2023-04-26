@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject goButton; // ボタン：ゲーム開始
     public GameObject retryButton; // ボタン：リトライ
+    public GameObject clearText; // テキスト：クリア
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
     // ステージクリア処理
     public void StageClear()
     {
-
+        clearText.SetActive(true); // クリア表示
+        retryButton.SetActive(false); // リトライボタン非表示
     }
 }
