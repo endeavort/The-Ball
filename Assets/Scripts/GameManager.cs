@@ -71,6 +71,12 @@ public class GameManager : MonoBehaviour
     // BACKボタン
     public void PushBackButton()
     {
+        GobackStageSelect();
+    }
 
+    // シーン移動処理
+    void GobackStageSelect()
+    {
+        SceneManager.LoadScene("StageSelectScene");
     }
 }
