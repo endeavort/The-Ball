@@ -67,4 +67,16 @@ public class GameManager : MonoBehaviour
         clearText.SetActive(true); // クリア表示
         retryButton.SetActive(false); // リトライボタン非表示
     }
+
+    // BACKボタン
+    public void PushBackButton()
+    {
+        GobackStageSelect();
+    }
+
+    // シーン移動処理
+    void GobackStageSelect()
+    {
+        SceneManager.LoadScene("StageSelectScene");
+    }
 }
