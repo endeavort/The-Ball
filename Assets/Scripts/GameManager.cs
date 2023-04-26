@@ -52,4 +52,10 @@ public class GameManager : MonoBehaviour
         goButton.SetActive(true); // GOボタン表示
         isBallMoving = false; // ボール移動中フラグ「false」
     }
+
+    // ステージクリア処理
+    public void StageClear()
+    {
+
+    }
 }
