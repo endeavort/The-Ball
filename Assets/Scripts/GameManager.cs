@@ -66,6 +66,16 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(clearSE); // クリア音再生
         clearText.SetActive(true); // クリア表示
         retryButton.SetActive(false); // リトライボタン非表示
+
+        // セーブデータ更新
+        // セーブされている「StageNo」よりも、今の「StageNo」が大きいとき
+        if (PlayerPrefs.GetInt("CLEAR", 0) < StageNo)
+        {
+            PlayerPrefs.SetInt("CLEAR", StageNo); // 「StageNo」を記録
+        }
+
+        // 3秒後に自動的にステージセレクト画面へ
+        Invoke("GobackStageSelect", 3.0f);
     }
 
     // BACKボタン
@@ -79,4 +89,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("StageSelectScene");
     }
+
+
 }
